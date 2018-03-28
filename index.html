@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather</title>     
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper center-align">
+            <div class="display">
+                <div id="place">----</div>
+                <div id="icon">
+                    <img id="img-icon" src="http://openweathermap.org/img/w/03n.png"/>
+                </div>
+                <div id="temp-wrap">
+                    <!--<i class="material-icons icon-resize">whatshot</i>-->
+                    <span id="temp">-- &ordm;C</span>
+                    <button class="btn-floating btn-small waves-effect waves-light blue" id="unit-switch">
+                        <i class="material-icons">swap_horiz</i>
+                    </button>
+                </div>
+               <!-- <div id="type">Type</div>-->
+                <div id="humidity-wrap">
+                    <span id="humidity-info" class="emph">humidity:</span>
+                    <span id="humidity" class="emph2">--</span>
+                </div>
+                <div id="clouds-wrap">
+                    <span id="clouds-info" class="emph">cloudiness:</span>
+                    <span id="clouds" class="emph2">--</span>
+                </div>
+                <div id="wind-wrap">
+                    <span id="wind-info" class="emph">wind speed:</span>
+                    <span id="wind" class="emph2">--</span>
+                </div>           
+                <div id="pressure-wrap">
+                    <span id="pressure-info" class="emph">pressure:</span>
+                    <span id="pressure" class="emph2">--</span>
+                </div>   
+            </div>
+            <button id="get-auto" class="btn waves-effect waves-light blue">Locate me</button>
+            <div id="manual-input">
+                <div class="row">
+                    <input placeholder="City" id="input-city" type="text">
+                    <button class="btn-floating btn-small waves-effect waves-light blue" id="get-man">
+                         <i class="material-icons">location_on</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="warning" style="display:none">No warnings</div>
+        <script src="bundle.js"></script>
+    </body>
+</html>
