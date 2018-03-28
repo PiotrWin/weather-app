@@ -1,0 +1,117 @@
+$blue: #2196f3
+	
+=shadow($x, $y, $blur, $spread, $alpha)
+    -webkit-box-shadow: $x $y $blur $spread rgba(0,0,0,$alpha) !important
+    -moz-box-shadow: $x $y $blur $spread rgba(0,0,0,$alpha) !important
+    box-shadow: $x $y $blur $spread rgba(0,0,0,$alpha) !important
+
+html
+	heigth: 100%
+	transition: none !important
+body 
+	background-repeat: no-repeat
+	background-size: cover
+	background-attachment: fixed
+	-webkit-transition: background-image 3s ease-in-out
+	-moz-transition: background-image 3s ease-in-out
+	-o-transition: background-image 3s ease-in-out
+	transition: background-image 3s ease-in-out
+.wrapper
+	width: 40%
+	margin-left: 30%
+	margin-top: 0%
+	height: 100vh
+	padding: 5% 0 4% 0%
+	background-color: rgba(255, 255, 255, 0.8)
+	+shadow(0px, 0px, 1vw, 0.1vw, 1)
+	.display
+		#place
+			font-weight: bold
+			font-size: 2.5vw
+		#temp-wrap
+			font-size: 2vw
+			width: 30%
+			margin-left: 37.25%
+			margin-top: 1%
+			display: flex
+			justify-content: center
+			align-items: center
+			#temp
+				margin-right: 10%
+				font-weight: bold
+		#humidity-wrap, #pressure-wrap, #wind-wrap, #clouds-wrap
+			margin-top: 1%
+			display: flex
+			justify-content: space-between
+			border-bottom-style: solid
+			border-bottom-color: $blue
+			border-bottom-width: 0.1vw !important
+			align-items: center
+			width: 40%	
+			margin-left: 30%
+			font-size: 1.5vw
+			.emph2
+				font-weight: bold
+	#manual-input
+		margin-top: 2%
+		display: flex
+		margin-bottom: 0
+		#input-city
+			margin-top: 0%
+			width: 50%
+			font-size: 1.25vw
+			text-align: center
+			height: 3vw !important
+			margin-bottom: 0
+	#get-auto
+		margin-top: 10%
+		font-size: 1vw
+		height: 2vw !important
+		line-height: 0 !important
+		padding: 2% 2% 2% 2%
+		text-transform: none
+		font-weight: normal
+		border-radius: 5%
+#icon
+	img
+		width: 4vw		
+::-webkit-input-placeholder
+	color: black
+	opacity: 0.7 !important
+input:-moz-placeholder
+	color: black
+	opacity: 0.7 !important
+::-moz-input-placeholder
+	color: black
+	opacity: 0.7 !important
+input[type=text]
+	border-bottom: 0.1vw solid rgba(0, 0, 0, 0.5) !important
+	&:focus
+		border-bottom: 0.1vw solid $blue !important
+		box-shadow: 0 0.25vw 0.2vw -0.2vw $blue !important
+		outline: none !important
+.btn, .btn-small, .btn-floating
+	transition: none !important
+.btn-small
+	width: 2.5vw !important
+	height: 2.5vw !important
+	.material-icons
+		display: flex
+		justify-content: center !important
+		align-items: center !important
+		line-height: 0 !important
+		font-size: 1.5vw
+#unit-switch
+	width: 2vw !important
+	height: 2vw !important
+	.material-icons
+		display: flex
+		justify-content: center !important
+		align-items: center !important
+		line-height: 0 !important
+		font-size: 1.5vw
+.icon-resize
+	font-size: 2.5vw !important
+.toast-resize
+	font-size: 1.5vw !important
+	height: 1vw !important
