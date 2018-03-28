@@ -31,8 +31,9 @@ weatherTypes.set('Clouds', 'clouds.jpg');
 weatherTypes.set('Extreme', 'extreme.jpg');
 weatherTypes.set('Additional', 'additional.jpg');
 
-$('body').css('background-image', `url("${imgPath}background-beach.jpg")`);
-$('.wrapper').css('background-image', `url("${imgPath}texture.png")`);
+preloadImg('background-beach.jpg', 'body');
+preloadImg('texture.png', '.wrapper');
+
 $('document').ready(() => {
     getLocationAuto();
 });
@@ -153,8 +154,17 @@ function updateDisplay(data, temp_unit) {
     $('#wind').text(data.wind.speed + ' km/h');
     img = weatherTypes.get(data.weather[0].main);
     if (!img) img = 'default.jpg';
-    $('body').css('background-image', `url("${imgPath}${img}")`);
+    preloadImg(img, 'body');
+    //$('body').css('background-image', `url("${imgPath}${img}")`);
     $('#icon').empty();
-    $('#icon').prepend(`<img id="img-icon" src="http://openweathermap.org/img/w/${data.weather[0].icon}.png"/>`);
+    $('#icon').prepend(`<img id="img-icon" src="https://openweathermap.org/img/w/${data.weather[0].icon}.png"/>`);
+}
+
+function preloadImg(src, elem) {
+    const img = new Image();
+    img.onload = () => {
+        $(elem).css('background-image', `url(${img.src}`);
+    };
+    img.src = `${imgPath}${src}`;
 }
 
